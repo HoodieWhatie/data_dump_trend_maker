@@ -1,0 +1,36 @@
+7/31: 
+Scripting with Python and FortiGate
+•	Setup
+ o	Finished base configuration of FortiGate
+ o	Installed pip
+ o	Installed paramiko libraries using pip
+ o	Added password to admin account
+ o	Confirmed SSH connectivity from PC
+•	Configuration
+ o	Enabled config change logging
+  	GUI changes reflect in CLI
+ o	Created script that builds SSH2() connection
+ o	Debugging stdin, stdout, stderr=ssh.exec_command(“<pass commands>”) method
+  	Passing commands to FortiGate
+•	Script Goals
+ o	Create interactive CLI environment (Accomplished)
+ o	Read SNMP strings
+  	Search for specific output
+  	Parse data
+  	Use Regex to find specific values
+•	Triggers Alarm on “True”
+
+•	Created script that can search configuration based on keywords and retrieve lines
+
+•	Researching
+  o	Implementing auto-script for FW commands based on log/SNMP events
+  o	Use .NET Threading to pull logs in defined increments
+
+Future items requiring scheduled time
+•	Find useful data to pull from logs
+•	Create scripts to automate the retrieval of data to be used in proactive support
+ o	Save time, money
+ o	Increase accuracy, consistency, efficiency
+•	Studying/development on own time
+-----------------------------------------------------------------------------
+

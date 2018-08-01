@@ -3,7 +3,11 @@ import time
 import select
 import paramiko
 
-host = '172.16.30.254'
+host = '10.0.0.220'
+admin = 'admin'
+key = 'password'
+company_name = "Think3"
+
 i = 1
 
 #
@@ -16,7 +20,7 @@ while True:
     try:
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(host)
+        ssh.connect('10.0.0.220',username="admin",password="password")
         print("Connected to %s" % host)
         break
     except paramiko.AuthenticationException:
@@ -33,16 +37,20 @@ while True:
         sys.exit(1)
 
 # Send the command (non-blocking)
-stdin, stdout, stderr = ssh.exec_command("my_long_command --arg 1 --arg 2")
+command = input("Enter command:")
+while command != "qwert":
+    stdin, stdout, stderr = ssh.exec_command(command)
 
-# Wait for the command to terminate
-while not stdout.channel.exit_status_ready():
-    # Only print data if there is data to read in the channel
-    if stdout.channel.recv_ready():
-        rl, wl, xl = select.select([stdout.channel], [], [], 0.0)
-        if len(rl) > 0:
-            # Print data from stdout
-            print(stdout.channel.recv(1024),)
+    # Wait for the command to terminate
+    while not stdout.channel.exit_status_ready():
+        # Only print data if there is data to read in the channel
+        if stdout.channel.recv_ready():
+            rl, wl, xl = select.select([stdout.channel], [], [], 0.0)
+            if len(rl) > 0:
+                # Print data from stdout
+                print(stdout.channel.recv(1024),)
+                
+    command = input("Enter command:")
 
 #
 # Disconnect from the host

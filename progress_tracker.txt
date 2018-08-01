@@ -6,18 +6,21 @@ Scripting with Python and FortiGate
  o	Installed paramiko libraries using pip
  o	Added password to admin account
  o	Confirmed SSH connectivity from PC
+ 
 •	Configuration
  o	Enabled config change logging
   	GUI changes reflect in CLI
  o	Created script that builds SSH2() connection
  o	Debugging stdin, stdout, stderr=ssh.exec_command(“<pass commands>”) method
   	Passing commands to FortiGate
+  
 •	Script Goals
  o	Create interactive CLI environment (Accomplished)
  o	Read SNMP strings
   	Search for specific output
   	Parse data
   	Use Regex to find specific values
+  
 •	Triggers Alarm on “True”
 
 •	Created script that can search configuration based on keywords and retrieve lines

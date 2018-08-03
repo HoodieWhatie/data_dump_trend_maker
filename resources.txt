@@ -2,3 +2,4 @@ Subprocesses: https://docs.python.org/2/library/subprocess.html#module-subproces
 OS_System_Calls: https://stackoverflow.com/questions/25734804/python-best-choice-when-creating-os-system-calls
 SSH2(): http://www.paramiko.org/
 Smoother IO Commands (SonicWall Compat): https://pexpect.readthedocs.io/en/stable/#
+('~/.ssh/known_hosts')): https://stackoverflow.com/questions/6203653/how-do-you-execute-multiple-commands-in-a-single-session-in-paramiko-python

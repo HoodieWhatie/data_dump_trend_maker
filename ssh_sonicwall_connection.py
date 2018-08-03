@@ -15,11 +15,11 @@ SONICWALL = (
 )
 
 #Fortigate Test
-FORTIGATE = ('10.0.0.220', 'admin', 'password', 
+FORTIGATE = ('10.0.0.220', 'admin', 'password')
 
 def connection(host, username, password, desc, sysname):
 
-	 sshc = pexpect.spawn('ssh ' + host)
+	 sshc = pexpect.spawn('ssh ' + host) #pexpect.spawn uses pty's and can only be used on Unix. Windows will throw an error.
 	 sshc.expect('User:')
 	 sshc.sendline(username)
 	 sshc.expect('Password:')
